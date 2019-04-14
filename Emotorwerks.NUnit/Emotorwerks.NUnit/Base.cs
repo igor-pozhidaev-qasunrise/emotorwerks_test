@@ -24,8 +24,6 @@ namespace Emotorwerks.NUnit
         {
             switch (browser)
             {
-                // These all pull the latest version by default
-                // To specify version add SetCapability("version", "desired version")
                 case "chrome":
                     driver = new ChromeDriver();
                     break;
