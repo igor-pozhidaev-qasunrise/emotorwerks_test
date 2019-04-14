@@ -45,6 +45,8 @@ namespace Emotorwerks.NUnit
                 default:
                     break;
             }
+
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
         [TearDown]
