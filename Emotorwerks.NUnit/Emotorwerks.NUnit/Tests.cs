@@ -12,32 +12,21 @@ using OpenQA.Selenium.IE;
 
 namespace Emotorwerks.NUnit
 {
-    [TestFixture(typeof(ChromeDriver))]
-    [TestFixture(typeof(FirefoxDriver))]
-    [TestFixture(typeof(InternetExplorerDriver))]
+    [TestFixture("chrome")]
+    [TestFixture("firefox")]
+    [TestFixture("edge")]
+    [TestFixture("ie")]
     [Parallelizable]
 
-    public class Tests<TWebDriver> where TWebDriver : IWebDriver, new()
+    public class Tests : SetUps
     {
-        IWebDriver driver;
-        
-        [SetUp]
-        public void Initialize()
-        {
-            this.driver = new TWebDriver();
-        }
+        public Tests(string browser) : base(browser) { }
 
         [Test]
         public void googleTest()
         {
             // TODO: Add your test code here
             driver.Navigate().GoToUrl("https://www.google.com/");
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            driver.Quit();
         }
     }
 }
