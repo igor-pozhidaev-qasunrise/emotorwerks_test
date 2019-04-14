@@ -34,8 +34,12 @@ namespace Emotorwerks.NUnit
             searchInput.Submit();
 
             // Check search results
-            // Check eMotorWerks website link on the fisrt searh page
+            // Check eMotorWerks website links on the fisrt searh page
             driver.FindElement(By.XPath("//cite[.='https://emotorwerks.com/']"));
+            driver.FindElement(By.XPath("//a[@href='https://emotorwerks.com/']"));
+
+            // Check eMotorWerks - Wikipedia search result item 
+            driver.FindElement(By.XPath("//h3[.='eMotorWerks - Wikipedia']"));
 
             // Check eMotorWerks Wiki page link on the fisrt searh page
             driver.FindElement(By.XPath("//cite[.='https://en.wikipedia.org/wiki/EMotorWerks']"));
